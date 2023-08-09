@@ -1,6 +1,13 @@
 package com.example.learn.kt
 
 fun main(){
+    val student = Student("123",34)
+    val p = Person()
+    p.name = "Jack"
+    p.age = 19
+    p.eat()
+
+
     //print( largerNumber(234,53))
     //print(getScore1("jim"))
     /*val num = 10L
@@ -13,9 +20,9 @@ fun main(){
         println(i)
     }*/
 
-    for (i in 10 downTo(9)){
+    /*for (i in 10 downTo(1) step 5){
         println(i)
-    }
+    }*/
 }
 
 
