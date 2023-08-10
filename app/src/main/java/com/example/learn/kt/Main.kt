@@ -1,13 +1,49 @@
 package com.example.learn.kt
 
+fun doStudy(study: Study?){
+    study?.let {
+        it.readBooks()
+        it.doHomework()
+    }
+
+}
 fun main(){
-    val student = Student("123",34)
-    val p = Person()
-    p.name = "Jack"
-    p.age = 19
-    p.eat()
+
+    Thread{
+        println("Thread is running")
+    }.start()
+
+    /*val list = listOf("Apple","Banana","Orange","Pear","Watermelon")
+    val newList = list.filter { it.length <= 5 }.map { it.uppercase() }
+    for (a in newList){
+        println(a)
+    }*/
+    /*val map = HashMap<String, Int>()
+    map["Apple"] = 1
+    map["a"] = 2
+    map["b"] = 3
+    println(map["b"] )
+
+    for ((k,v) in map){
+        println("key is $k value = $v")
+    }*/
+    /*val list1 = mutableListOf("Apple","Xiaomi","Samsung","Huawei")
+    list1.add("OPPO")
+    for (fruit in list1){
+        println(fruit)
+    }
+*/
+
+   /* val cellphone1 = Cellphone("Samsung", 1399.99)
+    val cellphone2 = Cellphone("Samsung", 1399.99)
+    println(cellphone1)
+    println("cellphone1 equals cellphone2 "+ (cellphone1 == cellphone2))*/
 
 
+ /*   val student = Student("Jack",18)
+    println(student.eat())
+    doStudy(student)
+*/
     //print( largerNumber(234,53))
     //print(getScore1("jim"))
     /*val num = 10L

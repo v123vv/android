@@ -1,8 +1,13 @@
 package com.example.learn.kt
 
-class Student(val sno: String ,val grade: Int) : Person(){
-    init {
-        println("sno is "+ sno)
-        println("grade is "+ grade)
+class Student(name: String, age: Int): Person(name, age) , Study{
+    override fun readBooks() {
+        println(name + "is reading.")
     }
+
+    override fun doHomework() {
+        println(name+ "is homework.")
+    }
+
+
 }
