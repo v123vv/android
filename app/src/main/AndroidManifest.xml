@@ -13,12 +13,33 @@
         android:theme="@style/Theme.Learn"
         tools:targetApi="31">
         <activity
-            android:name=".kt.FirstActivity"
-            android:label="This is FirstAndroid"
-            android:exported="true">
+            android:name=".kt.ThirdActivity"
+            android:exported="false"
+            tools:ignore="AppLinkUrlError">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="https"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".kt.SecondActivity"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.example.learn.kt.ACTION_START" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="com.example.learn.kt.MY_CATEGORY" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".kt.FirstActivity"
+            android:exported="true"
+            android:label="This is FirstAndroid">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
     </application>
