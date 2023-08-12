@@ -11,19 +11,19 @@ import android.widget.Toast
 import com.example.learn.R
 import com.example.learn.databinding.FirstLayoutBinding
 
-class FirstActivity : AppCompatActivity() {
+class FirstActivity : BaseActivity() {
 
     private lateinit var binding: FirstLayoutBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Log.d("FirstActivity", this.toString())
         binding = FirstLayoutBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
         binding.button1.setOnClickListener{
-
             val intent = Intent(this, SecondActivity::class.java)
-            startActivityForResult(intent,1)
+            startActivity(intent)
         }
     }
 
@@ -49,5 +49,10 @@ class FirstActivity : AppCompatActivity() {
                 Log.d("1","returned data is $returnCode")
             }
         }
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        Log.d("FirstActivity ","onRestart")
     }
 }

@@ -9,19 +9,16 @@ import com.example.learn.R
 import com.example.learn.databinding.ActivitySecondBinding
 import com.example.learn.databinding.FirstLayoutBinding
 
-class SecondActivity : AppCompatActivity() {
+class SecondActivity : BaseActivity() {
     private lateinit var binding: ActivitySecondBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_second)
         binding = ActivitySecondBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
         binding.button2.setOnClickListener {
-            val intent = Intent()
-            intent.putExtra("data_return", "Hello 1")
-            setResult(RESULT_OK,intent)
-            finish()
+            val intent = Intent(this, FirstActivity::class.java)
+            startActivity(intent)
         }
 
         val callback = object : OnBackPressedCallback(true){
@@ -35,5 +32,8 @@ class SecondActivity : AppCompatActivity() {
         onBackPressedDispatcher.addCallback(this, callback)
     }
 
-
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d("SecondActivity", "onDestroy")
+    }
 }
