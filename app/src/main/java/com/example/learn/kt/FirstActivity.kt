@@ -22,8 +22,7 @@ class FirstActivity : BaseActivity() {
         val view = binding.root
         setContentView(view)
         binding.button1.setOnClickListener{
-            val intent = Intent(this, SecondActivity::class.java)
-            startActivity(intent)
+            SecondActivity.actionStart(this, "data1", "data2")
         }
     }
 

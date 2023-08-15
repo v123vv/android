@@ -1,13 +1,11 @@
 package com.example.learn.kt
 
+import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.OnBackPressedCallback
-import com.example.learn.R
 import com.example.learn.databinding.ActivitySecondBinding
-import com.example.learn.databinding.FirstLayoutBinding
 
 class SecondActivity : BaseActivity() {
     private lateinit var binding: ActivitySecondBinding
@@ -16,8 +14,10 @@ class SecondActivity : BaseActivity() {
         binding = ActivitySecondBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+        val params = intent.getStringExtra("param1")
+        Log.d("SecondActivity1", "extra data is $params")
         binding.button2.setOnClickListener {
-            val intent = Intent(this, FirstActivity::class.java)
+            val intent = Intent(this, SecondActivity::class.java)
             startActivity(intent)
         }
 
@@ -35,5 +35,14 @@ class SecondActivity : BaseActivity() {
     override fun onDestroy() {
         super.onDestroy()
         Log.d("SecondActivity", "onDestroy")
+    }
+
+    companion object{
+        fun actionStart(context: Context, data1: String, data2: String){
+            val intent = Intent(context, SecondActivity::class.java)
+            intent.putExtra("param1", data1)
+            intent.putExtra("param2", data2)
+            context.startActivity(intent)
+        }
     }
 }
