@@ -29,8 +29,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
                     setTitle("This is Dialog")
                     setMessage("Something important")
                     setCancelable(false)
-                    setPositiveButton("ok"){ _, _ ->}
-                    setNegativeButton("Cancel"){ _, _ ->}
+                    setPositiveButton("ok"){ _, _ -> Log.d ("AlertDialog","点击了ok")
+                    }
+                    setNegativeButton("Cancel"){ _, _ -> Log.d ("AlertDialog","点击了Cancel")}
                     show()
                 }
 
