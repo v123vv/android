@@ -13,9 +13,9 @@
         android:theme="@style/Theme.Learn"
         tools:targetApi="31">
         <activity
-            android:name=".kt.MainActivity"
-            android:label="This is Index"
-            android:exported="true" >
+            android:name=".kt.MainActivity2"
+            android:exported="true"
+            android:label="This is Index">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -47,9 +47,7 @@
         <activity
             android:name=".kt.FirstActivity"
             android:exported="true"
-            android:launchMode="singleTask">
-
-        </activity>
+            android:launchMode="singleTask"></activity>
     </application>
 
 </manifest>
